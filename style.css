@@ -2,6 +2,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -18,9 +19,19 @@ body {
 	border: 1px solid rgb(180, 180, 180);
 }
 
-/* .grid-item:hover {
-	background-color: black;
-} */
+button {
+	border: none;
+	background-color: rgb(231, 231, 231);
+	font-size: 20px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-weight: bold;
+	color: black;
+}
+
+button:hover {
+	background: rgb(180, 180, 180);
+}
 
 .drawn {
 	background-color: rgb(0, 0, 0);

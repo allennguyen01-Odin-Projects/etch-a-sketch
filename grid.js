@@ -18,5 +18,18 @@ function changeGridItemColor() {
 	});
 }
 
+function clearGrid() {
+	const clear = document.querySelector("#clear");
+	const grid = document.querySelector(".grid-container");
+	const gridItems = grid.children;
+	clear.addEventListener("click", () => {
+		for (let i = 0; i < gridItems.length; i++) {
+			const gridItem = gridItems[i];
+			gridItem.classList.remove("drawn");
+		}
+	});
+}
+
 makeGrid(32);
 changeGridItemColor();
+clearGrid();
