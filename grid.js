@@ -9,4 +9,14 @@ function makeGrid(numRowsCols) {
 	}
 }
 
-makeGrid(16);
+function changeGridItemColor() {
+	gridItems = document.querySelectorAll(".grid-item");
+	gridItems.forEach((gridItem) => {
+		gridItem.addEventListener("mouseover", () => {
+			gridItem.classList.add("drawn");
+		});
+	});
+}
+
+makeGrid(32);
+changeGridItemColor();

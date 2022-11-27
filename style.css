@@ -17,3 +17,11 @@ body {
 .grid-item {
 	border: 1px solid rgb(180, 180, 180);
 }
+
+/* .grid-item:hover {
+	background-color: black;
+} */
+
+.drawn {
+	background-color: rgb(0, 0, 0);
+}
