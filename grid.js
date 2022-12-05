@@ -1,5 +1,6 @@
 function makeGrid(numRowsCols) {
 	const grid = document.querySelector(".grid-container");
+	grid.innerHTML = "";
 	grid.style.gridTemplateColumns = `repeat(${numRowsCols}, 1fr)`;
 	grid.style.gridTemplateRows = `repeat(${numRowsCols}, 1fr)`;
 	for (let i = 0; i < numRowsCols ** 2; i++) {
@@ -30,6 +31,17 @@ function clearGrid() {
 	});
 }
 
-makeGrid(32);
+function changeGridSize() {
+	const gridSizeInput = document.getElementById("grid-size");
+	gridSizeInput.addEventListener("input", () => {
+		const gridSize = parseInt(gridSizeInput.value);
+		console.log(gridSize);
+		makeGrid(gridSize);
+		changeGridItemColor();
+	});
+}
+
+makeGrid(16);
 changeGridItemColor();
 clearGrid();
+changeGridSize();
