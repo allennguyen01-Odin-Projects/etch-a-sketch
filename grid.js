@@ -1,3 +1,6 @@
+const colorInput = document.getElementById("etch-color");
+let currentColor = colorInput.value;
+
 function makeGrid(numRowsCols) {
 	const grid = document.querySelector(".grid-container");
 	grid.innerHTML = "";
@@ -14,7 +17,7 @@ function changeGridItemColor() {
 	gridItems = document.querySelectorAll(".grid-item");
 	gridItems.forEach((gridItem) => {
 		gridItem.addEventListener("mouseover", () => {
-			gridItem.classList.add("drawn");
+			gridItem.style.backgroundColor = currentColor;
 		});
 	});
 }
@@ -26,7 +29,7 @@ function clearGrid() {
 	clear.addEventListener("click", () => {
 		for (let i = 0; i < gridItems.length; i++) {
 			const gridItem = gridItems[i];
-			gridItem.classList.remove("drawn");
+			gridItem.style.backgroundColor = "white";
 		}
 	});
 }
@@ -41,7 +44,15 @@ function changeGridSize() {
 	});
 }
 
+function changeCurrentColor() {
+	colorInput.addEventListener("input", () => {
+		currentColor = colorInput.value;
+		console.log(currentColor);
+	});
+}
+
 makeGrid(16);
 changeGridItemColor();
 clearGrid();
 changeGridSize();
+changeCurrentColor();
